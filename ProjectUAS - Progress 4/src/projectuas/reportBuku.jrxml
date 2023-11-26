@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d6a6390b-d6e2-4de1-96c3-ce0e6704a530">
+	<property name="ireport.zoom" value="1.1000000000000105"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="64"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#191970">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 1" uuid="e9880905-8637-4d83-85db-401f0b8f5740">
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM buku]]>
+		</queryString>
+		<field name="isbn" class="java.lang.String"/>
+		<field name="judul" class="java.lang.String"/>
+		<field name="sub_judul" class="java.lang.String"/>
+		<field name="pengarang" class="java.lang.String"/>
+		<field name="penerbit" class="java.lang.String"/>
+		<field name="tahun" class="java.lang.String"/>
+		<field name="jumlah_halaman" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="querySearch" class="java.lang.String"/>
+	<parameter name="searchBy" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM buku;]]>
+	</queryString>
+	<field name="isbn" class="java.lang.String"/>
+	<field name="judul" class="java.lang.String"/>
+	<field name="sub_judul" class="java.lang.String"/>
+	<field name="pengarang" class="java.lang.String"/>
+	<field name="penerbit" class="java.lang.String"/>
+	<field name="tahun" class="java.lang.String"/>
+	<field name="jumlah_halaman" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="152" forecolor="#FFFFFF" backcolor="#000066" uuid="971f9897-df2b-427a-8e0a-3b80c49ec692"/>
+			</rectangle>
+			<image>
+				<reportElement x="20" y="13" width="131" height="123" uuid="20ac2e31-df51-4ca5-88bd-3c0fcb8f7015"/>
+				<imageExpression><![CDATA["C:\\Users\\HP\\Downloads\\0 Logo Buku.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="151" y="23" width="330" height="92" forecolor="#FFFFFF" backcolor="#006633" uuid="51ec6866-3380-4d8d-9cf7-b0e0d463d193"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Segoe UI" size="32" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BUKU SIBoox]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="26" width="551" height="35" uuid="3e30aff0-da62-42a0-a8d7-34ba695effa5"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hasil pencarian dari " + $P{querySearch} + " berdasarkan pada kolom " + $P{searchBy} +" hasilnya seperti dibawah ini"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="59" forecolor="#000066" backcolor="#000066" uuid="7ad7cf29-fca1-4ee9-99f4-57b121ff2d52"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="19" width="39" height="20" forecolor="#FFFFFF" uuid="2ffaaef4-5f94-4440-9ed2-a05c42ad9d64">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="19" width="39" height="20" forecolor="#FFFFFF" uuid="ef601bea-93d8-4a80-a7be-52387fd2c0c9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="19" width="68" height="20" forecolor="#FFFFFF" uuid="7774a8df-5a0f-476d-8247-1072a7388012">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="19" width="68" height="20" forecolor="#FFFFFF" uuid="fff8ec88-9f30-45b8-911a-ecd7ac713c0d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pengarang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="19" width="68" height="20" forecolor="#FFFFFF" uuid="92b3dcda-9795-47f7-b2dc-6f00c9ed2fea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penerbit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="19" width="53" height="20" forecolor="#FFFFFF" uuid="85c44e25-ae55-4baa-a0b7-860ae648ae8d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tahun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="8" width="65" height="42" forecolor="#FFFFFF" uuid="fd7670f4-6762-4951-b38d-57ce4c9c4c92">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47091bc6-54e4-4fc3-9c53-7995e34d3d19"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Halaman]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="59" width="555" height="1" forecolor="#0099FF" backcolor="#0099FF" uuid="3dc36b3d-0621-412d-8ccf-d941d030a29c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="93" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="11" width="76" height="59" uuid="9d6b372c-edef-41d0-aa1c-e4f15c52415f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{isbn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="11" width="77" height="59" uuid="10bbbffe-4c3d-4cb1-b629-1167f3fa8beb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="11" width="68" height="59" uuid="329d53bb-37df-45ed-9056-9e7798b3a7c8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sub_judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="11" width="68" height="59" uuid="dd4465c4-f85e-430a-9287-46564d74646f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pengarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="11" width="68" height="59" uuid="33aa1a67-ed0c-4872-9a2d-6a637984df89">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penerbit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="11" width="53" height="59" uuid="69058836-1b72-486d-9db4-1769c4cf5c13">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="11" width="65" height="59" uuid="798a31fe-27a8-4fd6-92e0-bdc7266be058">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd426237-0004-441f-9852-2b42612e40fe"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah_halaman}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="83" width="555" height="1" forecolor="#000066" backcolor="#000066" uuid="d72d6924-b422-4f73-a9f1-5005be0e8f3d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
